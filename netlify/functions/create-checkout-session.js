@@ -1,19 +1,29 @@
-async function redirectToStripeCheckout() {
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
+exports.handler = async (event) => {
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, body: 'Method Not Allowed' };
+  }
+
   try {
-    // Llamada a una función serverless o endpoint que genera la sesión de Stripe
-    const response = await fetch('/.netlify/functions/create-checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ priceId: 'tu_price_id_de_stripe' }) // Reemplaza con tu ID real de Stripe
+    const { priceId } = JSON.parse(event.body);
+
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [{ price: priceId, quantity: 1 }],
+      mode: 'subscription',
+      success_url: `https://tiny-genie-8f6fe8.netlify.app/dashboard?success=true`,
+      cancel_url: `https://tiny-genie-8f6fe8.netlify.app/pricing?canceled=true`,
     });
 
-    const data = await response.json();
-    if (data.url) {
-      window.location.href = data.url; // Redirige al checkout de Stripe
-    } else {
-      alert('Error al iniciar el pago');
-    }
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ url: session.url }),
+    };
   } catch (error) {
-    console.error('Error:', error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: error.message }),
+    };
   }
-}
+};
