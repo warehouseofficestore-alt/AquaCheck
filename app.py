@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-# Configuración de la página web
+# Configuración de la página webeck - Análisis", page_icon="💧", layout="centered")
 st.set_page_config(page_title="AquaCheck - Análisis", page_icon="💧", layout="centered")
 
 
