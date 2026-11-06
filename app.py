@@ -33,8 +33,8 @@ feature_3 = st.number_input("Parámetro 3 (Ej. Minerales disueltos)", value=0.0)
 if st.button("Ejecutar Análisis AquaCheck"):
     input_data = pd.DataFrame([[feature_1, feature_2, feature_3]])
                                     
-                                        try:
-                                                prediction = model.predict(input_data)
+    try:
+        prediction = model.predict(input_data)
                                                         st.markdown("### Resultado del Diagnóstico:")
                                                                 st.info(f"El resultado de la evaluación es: **{prediction[0]}**")
                                                                     except Exception as e:
