@@ -6,8 +6,8 @@ import pandas as pd
 st.set_page_config(page_title="AquaCheck", page_icon="💧")
 
 
-            st.title("💧 AquaCheck: Sistema Inteligente")
-            st.write("Bienvenido a la plataforma de predicción y control de calidad. Ingrese los parámetros requeridos para realizar el análisis.")
+st.title("💧 AquaCheck: Sistema Inteligente")
+st.write("Bienvenido a la plataforma de predicción y control de calidad. Ingrese los parámetros requeridos para realizar el análisis.")
 
             # Cargar el modelo entrenado de forma eficiente
             @st.cache_resource
