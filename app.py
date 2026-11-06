@@ -35,9 +35,9 @@ if st.button("Ejecutar Análisis AquaCheck"):
                                     
     try:
         prediction = model.predict(input_data)
-                                                        st.markdown("### Resultado del Diagnóstico:")
-                                                                st.info(f"El resultado de la evaluación es: **{prediction[0]}**")
-                                                                    except Exception as e:
-                                                                            st.warning("Nota: Asegúrate de que el número de campos de entrada coincida exactamente con las variables que usó tu modelo al ser entrenado.")
+        st.markdown("### Resultado del Diagnóstico:")
+        st.info(f"El resultado de la evaluación es: **{prediction[0]}**")
+        except Exception as e:
+        st.warning("Nota: Asegúrate de que el número de campos de entrada coincida exactamente con las variables que usó tu modelo al ser entrenado.")
 
                                                                             
