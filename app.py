@@ -24,10 +24,10 @@ except Exception as e:
 st.markdown("---")
 st.subheader("Parámetros de Entrada")
 
-                            # Campos de entrada
-                            feature_1 = st.number_input("Parámetro 1 (Ej. pH / Nivel de turbidez)", value=0.0)
-                            feature_2 = st.number_input("Parámetro 2 (Ej. Temperatura / Conductividad)", value=0.0)
-                            feature_3 = st.number_input("Parámetro 3 (Ej. Minerales disueltos)", value=0.0)
+# Campos de entrada
+feature_1 = st.number_input("Parámetro 1 (Ej. pH / Nivel de turbidez)", value=0.0)
+feature_2 = st.number_input("Parámetro 2 (Ej. Temperatura / Conductividad)", value=0.0)
+feature_3 = st.number_input("Parámetro 3 (Ej. Minerales disueltos)", value=0.0)
 
                             # Botón para ejecutar la predicción
                             if st.button("Ejecutar Análisis AquaCheck"):
