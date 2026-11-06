@@ -32,12 +32,12 @@ feature_3 = st.number_input("Parámetro 3 (Ej. Minerales disueltos)", value=0.0)
                             # Botón para ejecutar la predicción
 if st.button("Ejecutar Análisis AquaCheck"):
     input_data = pd.DataFrame([[feature_1, feature_2, feature_3]])
-                                    
     try:
         prediction = model.predict(input_data)
         st.markdown("### Resultado del Diagnóstico:")
         st.info(f"El resultado de la evaluación es: **{prediction[0]}**")
-        except Exception as e:
-        st.warning("Nota: Asegúrate de que el número de campos de entrada coincida exactamente con las variables que usó tu modelo al ser entrenado.")
+    except Exception as e:
+        st.warning(f"Nota: Asegúrate de que el número de características sea el correcto. Error: {e}")
+
 
                                                                             
