@@ -15,7 +15,7 @@ def load_model():
         return joblib.load("AquaCheckModel.pkl")
 
 
-                try:
+try:
                     model = load_model()
                         st.success("¡Modelo cargado correctamente en la nube!")
                         except Exception as e:
