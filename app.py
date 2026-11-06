@@ -3,7 +3,8 @@ import joblib
 import pandas as pd
 
 # Configuración de la página webeck - Análisis", page_icon="💧", layout="centered")
-st.set_page_config(page_title="AquaCheck - Análisis", page_icon="💧", layout="centered") st.set_page_config(page_title="AquaCheck - Análisis", page_icon="💧", layout="centered")
+st.set_page_config(page_title="AquaCheck - Análisis", page_icon="💧", layout="centered")
+
 
             st.title("💧 AquaCheck: Sistema Inteligente")
             st.write("Bienvenido a la plataforma de predicción y control de calidad. Ingrese los parámetros requeridos para realizar el análisis.")
