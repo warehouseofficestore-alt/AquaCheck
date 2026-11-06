@@ -16,9 +16,9 @@ def load_model():
 
 
 try:
-                    model = load_model()
-                        st.success("¡Modelo cargado correctamente en la nube!")
-                        except Exception as e:
+    model = load_model()
+    st.success("¡Modelo cargado correctamente en la nube!")
+    except Exception as e:
                             st.error(f"No se pudo cargar el modelo: {e}")
 
                             st.markdown("---")
