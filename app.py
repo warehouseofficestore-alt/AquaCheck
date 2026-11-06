@@ -30,8 +30,8 @@ feature_2 = st.number_input("Parámetro 2 (Ej. Temperatura / Conductividad)", va
 feature_3 = st.number_input("Parámetro 3 (Ej. Minerales disueltos)", value=0.0)
 
                             # Botón para ejecutar la predicción
-                            if st.button("Ejecutar Análisis AquaCheck"):
-                                input_data = pd.DataFrame([[feature_1, feature_2, feature_3]])
+if st.button("Ejecutar Análisis AquaCheck"):
+    input_data = pd.DataFrame([[feature_1, feature_2, feature_3]])
                                     
                                         try:
                                                 prediction = model.predict(input_data)
