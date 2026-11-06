@@ -10,9 +10,9 @@ st.title("💧 AquaCheck: Sistema Inteligente")
 st.write("Bienvenido a la plataforma de predicción y control de calidad. Ingrese los parámetros requeridos para realizar el análisis.")
 
             # Cargar el modelo entrenado de forma eficiente
-            @st.cache_resource
-            def load_model():
-                return joblib.load("AquaCheckModel.pkl")
+@st.cache_resource
+def load_model():
+return joblib.load("AquaCheckModel.pkl")
 
                 try:
                     model = load_model()
