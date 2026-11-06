@@ -21,8 +21,8 @@ try:
 except Exception as e:
     st.error(f"No se pudo cargar el modelo: {e}")
 
-                            st.markdown("---")
-                            st.subheader("Parámetros de Entrada")
+st.markdown("---")
+st.subheader("Parámetros de Entrada")
 
                             # Campos de entrada
                             feature_1 = st.number_input("Parámetro 1 (Ej. pH / Nivel de turbidez)", value=0.0)
